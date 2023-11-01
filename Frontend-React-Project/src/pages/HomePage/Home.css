@@ -1,0 +1,30 @@
+.home {
+  min-height: 100vh;
+  background: url("../../assets/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section {
+  margin: 0px 50px;
+}
+
+.explanation {
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.explanation h2 {
+  color: #333;
+  margin: 0;
+}
+
+.explanation p {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6;
+}

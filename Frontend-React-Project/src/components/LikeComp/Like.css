@@ -1,0 +1,32 @@
+.like {
+  margin-left: 8px;
+}
+
+.like-btn {
+  vertical-align: middle;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.heart-icon {
+  fill: none;
+  stroke: black;
+  transition: stroke 0.3s, fill 0.3s;
+  vertical-align: middle;
+}
+
+.heart-icon.active {
+  stroke: red;
+  fill: red;
+}
+
+.likes-details {
+  vertical-align: middle;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: #eee;
+  font-size: 16px;
+  font-weight: 450;
+}

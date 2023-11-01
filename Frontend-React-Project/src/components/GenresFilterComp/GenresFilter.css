@@ -1,0 +1,63 @@
+.music-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.music-genre {
+  position: relative;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #111a27;
+  padding: 13px;
+  border-radius: 10px;
+  color: #eee;
+  width: 21%;
+}
+
+.music-genre input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  background-color: #bdbdbd;
+  border-radius: 3px;
+}
+
+.music-genre input:hover {
+  background-color: #aaaaaa;
+}
+
+.music-genre input:checked {
+  background-color: #6a00ff;
+}
+
+.music-genre input:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.music-genre input:checked:after {
+  display: block;
+}
+
+.music-genre input:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.genre-text {
+  margin-left: 31px;
+}
