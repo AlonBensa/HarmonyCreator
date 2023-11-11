@@ -6,6 +6,7 @@ import MySongs from "./pages/UsersSongsPage/MySongs";
 import OtherSongs from "./pages/UsersSongsPage/OtherSongs";
 import MakeSongs from "./pages/MakeSongsPage/MakeSongs";
 import UsersProfiles from "./pages/UsersProfilesPage/UsersProfiles";
+import "./index.css";
 
 function App() {
   return (

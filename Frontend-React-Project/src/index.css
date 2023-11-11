@@ -4,6 +4,21 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  height: fit-content;
+}
+
+.App {
+  height: fit-content;
+}
+
+#root {
+  height: fit-content;
+}
+
+html {
   background: linear-gradient(#2a00b7, #45006c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  width: fit-content;
 }

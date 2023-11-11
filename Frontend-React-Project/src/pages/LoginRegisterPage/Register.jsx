@@ -11,7 +11,7 @@ function Register() {
   const [filteredGenres, setFilteredGenres] = useState([]);
 
   return (
-    <>
+    <div className="login-page">
       <Navbar></Navbar>
       <div className="container">
         <div className="header">
@@ -45,7 +45,7 @@ function Register() {
           <div className="submit">Sign up</div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
