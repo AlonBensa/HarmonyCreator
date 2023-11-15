@@ -6,6 +6,7 @@ import MySongs from "./pages/UsersSongsPage/MySongs";
 import OtherSongs from "./pages/UsersSongsPage/OtherSongs";
 import MakeSongs from "./pages/MakeSongsPage/MakeSongs";
 import UsersProfiles from "./pages/UsersProfilesPage/UsersProfiles";
+import UserProfile from "./pages/UserProfilePage/UserProfile";
 import "./index.css";
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
         <Route
           path="Users Profiles"
           element={<UsersProfiles></UsersProfiles>}
+        />
+        <Route
+          path="/profile/:username"
+          element={<UserProfile></UserProfile>}
         />
       </Routes>
     </div>

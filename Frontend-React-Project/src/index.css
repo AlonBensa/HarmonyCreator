@@ -5,20 +5,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: fit-content;
+  width: 100%;
+  padding-bottom: 40px;
 }
 
 .App {
-  height: fit-content;
+  height: 100%;
+  width: 100%;
 }
 
 #root {
-  height: fit-content;
+  height: 100%;
+  width: 100%;
 }
 
 html {
   background: linear-gradient(#2a00b7, #45006c);
   background-repeat: no-repeat;
   background-size: cover;
-  height: fit-content;
-  width: fit-content;
+  min-height: 100%;
+  width: 100%;
 }

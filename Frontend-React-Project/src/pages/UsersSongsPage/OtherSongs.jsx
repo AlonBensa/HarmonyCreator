@@ -4,7 +4,6 @@ import OtherSong from "../../components/SongComp/OtherSong";
 import Navbar from "../../components/NavbarComp/Navbar";
 import SearchBar from "../../components/SearchBarComp/SearchBar";
 import GenresFilter from "../../components/GenresFilterComp/GenresFilter";
-import User from "../../components/UserComp/User";
 
 function OtherSongs() {
   const userSongs = [
