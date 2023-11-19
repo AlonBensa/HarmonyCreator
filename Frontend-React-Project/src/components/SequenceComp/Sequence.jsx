@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Sequencer.css";
+import "./Sequence.css";
 
 const Sequencer = ({ notes }) => {
   const [sequence, setSequence] = useState([]);

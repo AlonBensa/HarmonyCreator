@@ -1,7 +1,43 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useReducer, useMemo } from "react";
 import "./MakeSongs.css";
 import Navbar from "../../components/NavbarComp/Navbar";
-import Sequencer from "../../components/SequencerComp/Sequencer";
+import Sequence from "../../components/SequenceComp/Sequence";
+
+const maxAtLine = 10;
+const noteDuration = 3;
+
+function reducer(state, action) {
+  switch (action.event) {
+    case "ADD OBJECT":
+      const { currentLine, sequences } = state;
+
+      // Check if the current line is at the maximum limit (maxAtLine)
+      if (sequences[currentLine] && sequences[currentLine].length < maxAtLine) {
+        // If not at the limit, add the object to the current line
+        return {
+          ...state,
+          sequences: sequences.map((line, index) =>
+            index === currentLine
+              ? [...line, action.value]
+              : line
+          ),
+        };
+      } else {
+        // If at the limit or the current line doesn't exist, move to the next line
+        return {
+          currentLine: currentLine + 1,
+          sequences: [
+            ...sequences,
+            [action.value], // Start a new line with the current object
+          ],
+        };
+      }
+
+    default:
+      break;
+  }
+}
+
 
 function MakeSongs() {
   const notes = [
@@ -95,7 +131,12 @@ function MakeSongs() {
     "C8",
   ];
 
+
   const [audioSource, setAudioSource] = useState(null);
+  const [state, dispatch] = useReducer(reducer, { sequences:[[]], currentLine: 0 });
+useEffect(() => {
+  console.log(state.sequences)
+}, [state])
 
   useEffect(() => {
     // Dynamically import the audio file based on the clicked note
@@ -109,6 +150,14 @@ function MakeSongs() {
           console.error(error);
         });
     };
+
+    // Add event listeners to each piano key
+    const pianoKeys = document.querySelectorAll(".key");
+    pianoKeys.forEach((key) => {
+      key.addEventListener("click", () => {
+        handleNoteClick(key.dataset.note);
+      });
+    });
   }, []);
 
   const playAudio = () => {
@@ -120,16 +169,24 @@ function MakeSongs() {
     }
   };
 
+
+
   return (
     <div className="make-songs-page">
       <Navbar></Navbar>
+      <div className="black-square">
+      </div>
       <div className="piano">
         {notes.map((note, index) => (
           <div
             key={index}
             data-note={note}
             className={`key ${note.includes("b") ? "black" : "white"}`}
-            onClick={playAudio}
+            onClick={() => {
+              console.log("run")
+              playAudio()
+              dispatch({event: "ADD OBJECT", value: {noteName: note, noteDuration: noteDuration}})
+            }}
           >
             <h3
               className={`note-name ${note.includes("b") ? "black" : "white"}`}
