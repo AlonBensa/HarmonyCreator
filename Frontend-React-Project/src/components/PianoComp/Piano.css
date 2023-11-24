@@ -1,0 +1,53 @@
+.piano {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+  height: 25%;
+}
+
+.key.white {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.key.white:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.key.white.active {
+  background-color: #c7c7c7;
+}
+
+.key.black {
+  width: 1.2%;
+  height: 60%;
+  background-color: black;
+  margin-left: -0.6%;
+  margin-right: -0.6%;
+  z-index: 2;
+}
+
+.key.black:hover {
+  background-color: rgb(39, 39, 39);
+}
+
+.key.black.active {
+  background-color: #333;
+}
+
+.note-name {
+  position: absolute;
+  font-size: 15px;
+  padding-left: 8px;
+  bottom: 0;
+}
+
+.note-name.black {
+  position: absolute;
+  height: 12%;
+  font-size: 10px;
+  padding-left: 2px;
+  color: white;
+}
