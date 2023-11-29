@@ -63,3 +63,7 @@
 .deleteButton {
   background-color: red;
 }
+
+.note.highlighted {
+  background-color: #6495ed;
+}

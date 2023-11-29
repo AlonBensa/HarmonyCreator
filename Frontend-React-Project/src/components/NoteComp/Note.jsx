@@ -9,6 +9,7 @@ function Note({
   setSequences,
   maxAtLine,
   initializeLines,
+  highlighted,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [editLine, setEditLine] = useState("");
@@ -16,8 +17,10 @@ function Note({
 
   const handleNoteClick = (event) => {
     if (
-      (event.target.className === "note " ||
-        event.target.className === "note editing") &&
+      (event.target.className === "note  " ||
+        event.target.className === "note editing" ||
+        event.target.className === "note editing highlighted" ||
+        event.target.className === "note  highlighted") &&
       sequences[sequenceIndex][noteIndex] !== " "
     ) {
       setIsOpen(!isOpen);
@@ -94,7 +97,7 @@ function Note({
 
   return (
     <div
-      className={`note ${isOpen ? "editing" : ""}`}
+      className={`note ${isOpen ? "editing" : ""} ${highlighted ? "highlighted" : ""}`}
       onClick={handleNoteClick}
     >
       <div className={`edit-window ${isOpen ? "visible" : ""}`}>
