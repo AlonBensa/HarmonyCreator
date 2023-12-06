@@ -36,3 +36,29 @@
 .play-button.stop {
   background-color: #ff0000;
 }
+
+@media only screen and (max-width: 1400px) {
+  header{
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    font-size: 15px;
+  }
+
+  .play-button {
+    padding: 5px 15px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .note-name {
+    font-size: 10px;
+    padding-left: 6px;
+    bottom: 0;
+  }
+
+  .note-name.black {
+    font-size: 7px;
+  }
+}
